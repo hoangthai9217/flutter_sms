@@ -30,7 +30,7 @@ public class SwiftFlutterSmsPlugin: NSObject, FlutterPlugin, UINavigationControl
           controller.body = _arguments["message"] as? String
           controller.recipients = _arguments["recipients"] as? [String]
           controller.messageComposeDelegate = self
-          UIApplication.shared.keyWindow?.rootViewController?.present(controller, animated: true, completion: nil)
+          UIViewController.topViewController()?.present(controller, animated: true, completion: nil)
         } else {
           result(FlutterError(
               code: "device_not_capable",
@@ -67,6 +67,6 @@ public class SwiftFlutterSmsPlugin: NSObject, FlutterPlugin, UINavigationControl
     if let callback = self.result {
         callback(map[result])
     }
-    UIApplication.shared.keyWindow?.rootViewController?.dismiss(animated: true, completion: nil)
+    controller.dismiss(animated: true, completion: nil)
   }
 }
