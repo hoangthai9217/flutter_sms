@@ -6,6 +6,7 @@ Pod::Spec.new do |s|
   s.name             = 'flutter_sms'
   s.version          = '1.1.0'
   s.summary          = 'A Flutter plugin for Sending SMS on Android and iOS.'
+  s.swift_version    = '5.0'
   s.description      = <<-DESC
 A new flutter plugin project.
                        DESC
